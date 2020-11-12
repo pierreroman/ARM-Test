@@ -2,27 +2,27 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "VnetName": {
-        "type": "string",
-        "defaultValue": "VNet-001",
-        "metadata": {
-          "description": "Virtual Network Name"
+        "VnetName": {
+            "type": "string",
+            "defaultValue": "VNet-001",
+            "metadata": {
+                "description": "Virtual Network Name"
+            }
+        },
+        "CostCenterIO": {
+            "type": "string",
+            "defaultValue": "12345",
+            "metadata": {
+                "description": "Cost Center IO number for cross billing"
+            }
+        },
+        "OwnerName": {
+            "type": "string",
+            "defaultValue": "John Smith",
+            "metadata": {
+                "description": "Name of the stakeholder responsible for this resource"
+            }
         }
-      },
-      "CostCenterIO": {
-        "type": "string",
-        "defaultValue": "12345",
-        "metadata": {
-          "description": "Cost Center IO number for cross billing"
-        }
-      },
-      "OwnerName": {
-        "type": "string",
-        "defaultValue": "John Smith",
-        "metadata": {
-          "description": "Name of the stakeholder responsible for this resource"
-        }
-      }
     },
     "variables": {},
     "resources": [
@@ -34,7 +34,7 @@
             "tags": {
                 "CostCenter": "[parameters('CostCenterIO')]",
                 "Owner": "[parameters('OwnerName')]"
-            },  
+            },
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
