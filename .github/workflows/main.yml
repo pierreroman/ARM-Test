@@ -16,7 +16,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Get KV secret
+      - name: Get KV secret 2
         uses: Azure/get-keyvault-secrets@v1.0
         with:
           keyvault: "WiredCanuck-KeyVault"
