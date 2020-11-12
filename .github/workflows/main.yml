@@ -20,18 +20,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy ARM Template
-        uses: Azure/arm-deploy@v1.0.1
+      - name: Get KV secret
+        uses: Azure/get-keyvault-secrets@v1.0
         with:
-          scope: subscription
-          subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
-          region: eastus 
-          template: ./azuredeploy.json
-          
-      - name: Azure/get-keyvault-secrets@v1.0
-        uses: 
-        with:
-          keyvault: "myVault"
+          keyvault: "WiredCanuck-KeyVault"
           secrets: 'mySecret'  # comma separated list of secret keys that need to be fetched from the Key Vault 
           id: myGetSecretAction
