@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main
-env:
-  AZURE_SUBSCRIPTION_ID: 54a522b6-6cd7-4325-b4e6-566f9d921835   # My Azure Subscription Id
-  AZURE_RESOURCE_GROUP: GitHubActionExercise-rg   # Target Resource Group
-
 jobs:
   deploy-virtual-network-template:
     runs-on: ubuntu-latest
